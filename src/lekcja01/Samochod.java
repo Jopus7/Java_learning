@@ -17,11 +17,12 @@ class Samochod {
 
     }
 
-    public void wyswietlInfo() {
+    public long[] wyswietlInfo() {
         System.out.println("Marka : " + marka);
         System.out.println("Model : " + model);
         System.out.println("Rok Produkcji :" + rokProdukcji);
         System.out.println("Przebieg : " + przebieg);
         System.out.println("Elektryczny : " + czyElektryczny);
+        return null;
     }
 }
