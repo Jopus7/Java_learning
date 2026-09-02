@@ -64,4 +64,20 @@ public class Garaz {
         }
         return counter;
     }
+    public void pokazNajmocniejszySamochod() {
+
+        Samochod najmocniejszy = null;
+        for (int i = 0; i < samochodyWGarazu.length; i++) {
+            if (samochodyWGarazu[i] != null && najmocniejszy == null) {
+                najmocniejszy = samochodyWGarazu[i];
+            } else if (najmocniejszy != null && samochodyWGarazu[i].mocSilnika > najmocniejszy.mocSilnika) {
+                najmocniejszy = samochodyWGarazu[i];
+            }
+        }
+        if(najmocniejszy != null){
+            najmocniejszy.wyswietlInfo();
+            }else {
+            System.out.println("garaz pusty");
+        }
+    }
 }
