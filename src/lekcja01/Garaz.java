@@ -31,7 +31,7 @@ public class Garaz {
         for (int i = 0; i < samochodyWGarazu.length; i++) {
 
             if (samochodyWGarazu[i] != null &&
-                    Objects.equals(samochodyWGarazu[i].marka, marka)) {
+                    Objects.equals(samochodyWGarazu[i].getMarka(), marka)) {
 
                 samochodyWGarazu[i] = null;
                 System.out.println("samochod usuniety");
@@ -45,7 +45,7 @@ public class Garaz {
     public void znajdzSamochod(String marka){
         boolean znaleziono = false;
         for (int i = 0; i < samochodyWGarazu.length; i++){
-            if(samochodyWGarazu[i] != null && Objects.equals(samochodyWGarazu[i].marka, marka)){
+            if(samochodyWGarazu[i] != null && Objects.equals(samochodyWGarazu[i].getMarka(), marka)){
                 samochodyWGarazu[i].wyswietlInfo();
                 znaleziono = true;
             }
@@ -70,7 +70,7 @@ public class Garaz {
         for (int i = 0; i < samochodyWGarazu.length; i++) {
             if (samochodyWGarazu[i] != null && najmocniejszy == null) {
                 najmocniejszy = samochodyWGarazu[i];
-            } else if (najmocniejszy != null && samochodyWGarazu[i].mocSilnika > najmocniejszy.mocSilnika) {
+            } else if (najmocniejszy != null && samochodyWGarazu[i] != null  && samochodyWGarazu[i].getMocSilnika() > najmocniejszy.getMocSilnika()) {
                 najmocniejszy = samochodyWGarazu[i];
             }
         }
