@@ -4,7 +4,7 @@ package lekcja01;
 import java.util.Objects;
 
 public class Garaz {
-    Samochod[] samochodyWGarazu = new Samochod[3];
+    private Samochod[] samochodyWGarazu = new Samochod[3];
     public Garaz(){
 
     }

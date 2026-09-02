@@ -47,4 +47,20 @@ class Samochod {
     public int getMocSilnika() {
         return mocSilnika;
     }
+
+    public void setPrzebieg(double przebieg) {
+        if (przebieg >= this.przebieg) {
+            this.przebieg = przebieg;
+        } else {
+            System.out.println("zly przebieg");
+        }
+    }
+
+    public void setMocSilnika(int mocSilnika) {
+        if (mocSilnika > 0) {
+            this.mocSilnika = mocSilnika;
+        } else {
+            System.out.println("nie zmieniam");
+        }
+    }
 }

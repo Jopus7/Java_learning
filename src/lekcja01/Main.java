@@ -27,6 +27,12 @@ public class Main {
         System.out.println(salon.ileSamochodow());
         salon.pokazNajmocniejszySamochod();
 
+        System.out.println(Ford.getMocSilnika());
+        Ford.setMocSilnika(-100);
+
+        Ford.setMocSilnika(270);
+        System.out.println(Ford.getMocSilnika());
+
 
 
         }
