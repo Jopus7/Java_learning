@@ -7,32 +7,27 @@ public class Main {
 
         Garaz salon = new Garaz();
         Samochod Ford = new Samochod("Ford", "Focus",2017, 124000,false, 250);
-//        Ford.wyswietlInfo();
-
+        SamochodSpalinowy Ford2 = new SamochodSpalinowy("Ford", "Mustang", 2005,200000,450);
         Samochod BMW = new Samochod("BMW", "320i",2005 , 324000,false, 180);
-//        BMW.wyswietlInfo();
-
         Samochod Toyota = new Samochod("Toyota", "Corolla",2024, 24000,true, 1100);
-//        Toyota.wyswietlInfo();
+        SamochodElektryczny Tesla = new SamochodElektryczny("Tesla", "Model X", 2025,1000,300);
 
-        salon.dodajDoGarazu(Ford);
-//        salon.pokazGaraz();
-        salon.dodajDoGarazu(BMW);
-        salon.dodajDoGarazu(Toyota);
+        Samochod[] samochody = new Samochod[5];
+        samochody[0] = Ford;
+        samochody[1] = BMW;
+        samochody[2] = Toyota;
+        samochody[3] = Tesla;
+        samochody[4] = Ford2;
 
-//        salon.znajdzSamochod("BMW");
-        salon.znajdzSamochod("Fiat");
-//        salon.usunSamochod("BMW");
-//        salon.pokazGaraz();
-        System.out.println(salon.ileSamochodow());
-        salon.pokazNajmocniejszySamochod();
+        for (int i = 0; i < samochody.length; i++) {
+            samochody[i].wyswietlInfo();
 
-        System.out.println(Ford.getMocSilnika());
-        Ford.setMocSilnika(-100);
+            if (samochody[i] instanceof SamochodElektryczny) {
+                System.out.println("TO JEST SAMOCHOD ELEKTRYCZNY");
+            }
 
-        Ford.setMocSilnika(270);
-        System.out.println(Ford.getMocSilnika());
-
+            System.out.println();
+        }
 
 
         }
