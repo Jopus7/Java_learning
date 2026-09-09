@@ -5,19 +5,18 @@ abstract class Samochod implements Uruchamialny {
     private String model;
     private int rokProdukcji;
     private double przebieg;
-    private boolean czyElektryczny;
     private int mocSilnika;
+    private RodzajNapedu rodzajNapedu;
 
-    public Samochod(String marka, String model, int rokProdukcji, double przebieg, boolean czyElektryczny, int mocSilnika) {
+    public Samochod(String marka, String model, int rokProdukcji, double przebieg, int mocSilnika, RodzajNapedu rodzajNapedu) {
         this.marka = marka;
         this.model = model;
         this.rokProdukcji = rokProdukcji;
         this.przebieg = przebieg;
-        this.czyElektryczny = czyElektryczny;
         this.mocSilnika = mocSilnika;
+        this.rodzajNapedu = rodzajNapedu;
     }
     public abstract void wyswietlInfo();
-    public abstract String pobierzRodzajNapedu();
     public void uruchomSilnik() {
         System.out.println("Samochód został uruchomiony");
     }
@@ -37,9 +36,6 @@ abstract class Samochod implements Uruchamialny {
         return przebieg;
     }
 
-    public boolean isCzyElektryczny() {
-        return czyElektryczny;
-    }
 
     public int getMocSilnika() {
         return mocSilnika;
@@ -58,6 +54,16 @@ abstract class Samochod implements Uruchamialny {
             this.mocSilnika = mocSilnika;
         } else {
             System.out.println("nie zmieniam");
+        }
+    }
+    public RodzajNapedu getRodzajNapedu() {
+        return rodzajNapedu;
+    }
+    public void sprawdzNaped(){
+        switch (this.getRodzajNapedu()) {
+            case SPALINOWY -> System.out.println("jestem spalinowy");
+            case ELEKTRYCZNY -> System.out.println("jestem elektryczny");
+            case HYBRYDOWY -> System.out.println("jestem hybrydowy");
         }
     }
 }

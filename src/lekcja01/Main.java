@@ -6,6 +6,10 @@ public class Main {
         samochod.tankuj();
 
     }
+    public static void wyswietlRodzajNapedu(RodzajNapedu naped){
+        System.out.println(naped);
+    }
+
 
 
     public static void main(String[] args) {
@@ -27,15 +31,39 @@ public class Main {
         for (int i = 0; i < samochody.length; i++) {
             samochody[i].wyswietlInfo();
 
-            if (samochody[i] instanceof SamochodElektryczny) {
+            if (samochody[i].getRodzajNapedu() == RodzajNapedu.ELEKTRYCZNY) {
                 System.out.println("TO JEST SAMOCHOD ELEKTRYCZNY");
-                System.out.println(samochody[i].pobierzRodzajNapedu());
                 samochody[i].uruchom();
             }
 
             System.out.println();
         }
+
+        for (RodzajNapedu naped : RodzajNapedu.values()) {
+            System.out.println(naped);
+        }
         zatankujSamochod(Ford2);
+        System.out.println(Ford2.getRodzajNapedu());
+
+//        switch (Ford2.getRodzajNapedu()) {
+//            case SPALINOWY:
+//                System.out.println("jestem spalinowy");
+//                break;
+//            case ELEKTRYCZNY:
+//                System.out.println("jestem elektryczny");
+//                break;
+//            case HYBRYDOWY:
+//                System.out.println("jestem hybrydowy");
+//                break;
+//        }
+        Ford2.sprawdzNaped();
+
+        RodzajNapedu naped = RodzajNapedu.SPALINOWY;
+        System.out.println(naped);
+        naped = RodzajNapedu.ELEKTRYCZNY;
+        System.out.println(naped);
+
+        Ford2.sprawdzNaped();
 
 
         }
