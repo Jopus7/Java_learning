@@ -6,8 +6,15 @@ class SamochodElektryczny extends Samochod{
     }
     @Override
     public void wyswietlInfo() {
-        super.wyswietlInfo();
         System.out.println("Jestem elektryczny");
     }
+    @Override
+    public String pobierzRodzajNapedu(){
+    return "napęd elektyczny ";
+    }
+    @Override
+    public void uruchom(){
+        System.out.println("Uruchamiam silnik elektryczny");
+    };
 
 }

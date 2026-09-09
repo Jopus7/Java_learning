@@ -1,6 +1,6 @@
 package lekcja01;
 
-class Samochod {
+abstract class Samochod implements Uruchamialny {
     private String marka;
     private String model;
     private int rokProdukcji;
@@ -16,13 +16,10 @@ class Samochod {
         this.czyElektryczny = czyElektryczny;
         this.mocSilnika = mocSilnika;
     }
-    public void wyswietlInfo() {
-        System.out.println("Marka : " + marka);
-        System.out.println("Model : " + model);
-        System.out.println("Rok Produkcji :" + rokProdukcji);
-        System.out.println("Przebieg : " + przebieg);
-        System.out.println("Elektryczny : " + czyElektryczny);
-        System.out.println("Moc silnika : " + mocSilnika);
+    public abstract void wyswietlInfo();
+    public abstract String pobierzRodzajNapedu();
+    public void uruchomSilnik() {
+        System.out.println("Samochód został uruchomiony");
     }
     public String getMarka(){
         return marka;
