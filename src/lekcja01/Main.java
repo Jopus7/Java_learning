@@ -65,6 +65,10 @@ public class Main {
 
         Ford2.sprawdzNaped();
 
+        System.out.println("Liczba samochodow : " + Samochod.getLiczbaSamochodow());
+        Ford2.setMocSilnika(1200);
+        System.out.println(Ford2.getMocSilnika());
+
 
         }
 

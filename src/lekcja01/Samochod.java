@@ -7,6 +7,8 @@ abstract class Samochod implements Uruchamialny {
     private double przebieg;
     private int mocSilnika;
     private RodzajNapedu rodzajNapedu;
+    private static int liczbaSamochodow;
+    private static final int MAKSYMALNA_MOC = 1000;
 
     public Samochod(String marka, String model, int rokProdukcji, double przebieg, int mocSilnika, RodzajNapedu rodzajNapedu) {
         this.marka = marka;
@@ -15,7 +17,13 @@ abstract class Samochod implements Uruchamialny {
         this.przebieg = przebieg;
         this.mocSilnika = mocSilnika;
         this.rodzajNapedu = rodzajNapedu;
+        liczbaSamochodow++;
     }
+
+    public static int getLiczbaSamochodow() {
+        return liczbaSamochodow;
+    }
+
     public abstract void wyswietlInfo();
     public void uruchomSilnik() {
         System.out.println("Samochód został uruchomiony");
@@ -50,7 +58,7 @@ abstract class Samochod implements Uruchamialny {
     }
 
     public void setMocSilnika(int mocSilnika) {
-        if (mocSilnika > 0) {
+        if (mocSilnika > 0 && mocSilnika <= MAKSYMALNA_MOC) {
             this.mocSilnika = mocSilnika;
         } else {
             System.out.println("nie zmieniam");
