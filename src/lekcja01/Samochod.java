@@ -53,7 +53,7 @@ abstract class Samochod implements Uruchamialny {
         if (przebieg >= this.przebieg) {
             this.przebieg = przebieg;
         } else {
-            System.out.println("zly przebieg");
+            throw new IllegalArgumentException("Przebieg nie może być mniejszy od obecnego");
         }
     }
 
@@ -61,9 +61,10 @@ abstract class Samochod implements Uruchamialny {
         if (mocSilnika > 0 && mocSilnika <= MAKSYMALNA_MOC) {
             this.mocSilnika = mocSilnika;
         } else {
-            System.out.println("nie zmieniam");
+            throw new IllegalArgumentException("Nieprawidłowa moc silnika");
         }
     }
+
     public RodzajNapedu getRodzajNapedu() {
         return rodzajNapedu;
     }
