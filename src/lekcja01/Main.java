@@ -1,6 +1,9 @@
 package lekcja01;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class Main {
 
@@ -148,6 +151,56 @@ public class Main {
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+        HashMap<String, Integer> samochody4 = new HashMap<>();
+        samochody4.put("Ford", 250);
+        samochody4.put("BMW", 180);
+        samochody4.put("Tesla", 300);
+
+        System.out.println(samochody4.get("Tesla"));
+
+        samochody4.remove("Ford");
+        System.out.println(samochody4.containsKey("Ford"));
+        System.out.println(samochody4.size());
+
+//        for(Map.Entry<String, Integer> wpis : samochody4.entrySet()){
+//            System.out.println(wpis.getKey() + ": " +wpis.getValue());
+//        }
+
+        HashMap<String, Integer> samochody5 = new HashMap<>();
+
+        samochody5.put("Ford", 250);
+        samochody5.put("BMW", 180);
+        samochody5.put("Tesla", 300);
+        samochody5.put("Audi", 220);
+
+        for(Map.Entry<String, Integer> wpis : samochody5.entrySet()){
+            if(wpis.getValue() > 200){
+                System.out.println(wpis.getKey() + ": " +wpis.getValue());
+
+            }
+        }
+        HashSet<String> marki = new HashSet<>();
+
+        marki.add("Ford");
+        marki.add("BMW");
+        marki.add("Toyota");
+        marki.add("Tesla");
+        marki.add("BMW");
+
+        for(String marka : marki){
+            System.out.println(marka);
+        }
+
+        SamochodSpalinowy Ford1 =
+                new SamochodSpalinowy("Ford", "Focus", 2017, 100000, 250);
+
+        SamochodSpalinowy Ford3 =
+                new SamochodSpalinowy("Ford", "Focus", 2017, 100000, 250);
+
+        System.out.println(Ford1 == Ford3);
+        System.out.println(Ford1.equals(Ford3));
+        System.out.println(Ford1.hashCode());
+        System.out.println(Ford3.hashCode());
 
 
 

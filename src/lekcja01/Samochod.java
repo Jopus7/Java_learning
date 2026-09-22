@@ -1,5 +1,7 @@
 package lekcja01;
 
+import java.util.Objects;
+
 abstract class Samochod implements Uruchamialny {
     private String marka;
     private String model;
@@ -25,10 +27,12 @@ abstract class Samochod implements Uruchamialny {
     }
 
     public abstract void wyswietlInfo();
+
     public void uruchomSilnik() {
         System.out.println("Samochód został uruchomiony");
     }
-    public String getMarka(){
+
+    public String getMarka() {
         return marka;
     }
 
@@ -68,11 +72,30 @@ abstract class Samochod implements Uruchamialny {
     public RodzajNapedu getRodzajNapedu() {
         return rodzajNapedu;
     }
-    public void sprawdzNaped(){
+
+    public void sprawdzNaped() {
         switch (this.getRodzajNapedu()) {
             case SPALINOWY -> System.out.println("jestem spalinowy");
             case ELEKTRYCZNY -> System.out.println("jestem elektryczny");
             case HYBRYDOWY -> System.out.println("jestem hybrydowy");
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Samochod)) {
+            return false;
+        }
+
+        Samochod samochod = (Samochod) o;
+
+        return Objects.equals(this.marka, samochod.marka)
+                && Objects.equals(this.model, samochod.model)
+                && this.rokProdukcji == samochod.rokProdukcji;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(marka, model, rokProdukcji);
+    }
+
 }
