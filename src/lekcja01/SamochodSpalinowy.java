@@ -1,6 +1,6 @@
 package lekcja01;
 
-class SamochodSpalinowy extends Samochod implements Tankowalny {
+public class SamochodSpalinowy extends Samochod implements Tankowalny {
     public SamochodSpalinowy(String marka, String model, int rokProdukcji, double przebieg, int mocSilnika) {
         super(marka, model, rokProdukcji, przebieg,  mocSilnika,RodzajNapedu.SPALINOWY);
     }
